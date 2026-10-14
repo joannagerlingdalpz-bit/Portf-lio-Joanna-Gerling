@@ -1,0 +1,645 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faf3e7;
+    color: #720e38;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.cabecalho {
+    background-color: #520a28;
+    color: #faf3e7;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.menu li a {
+    color: #faf3e7;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.5s;
+}
+
+@media (max-width: 620px) {
+    .menu {
+        gap: 10px 18px;
+        padding: 8px 12px;
+    }
+
+    .menu li a {
+        font-size: 14px;
+    }
+}
+
+.menu li a:hover {
+    color: #a72c5f;   
+}
+
+.apresentacao {
+    padding: 50px 20px;
+    background-color: #720e38;
+    color: #faf3e7;
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.texto-introducao {
+    line-height: 1.6;
+    text-align: left;
+    padding-left: 45px;
+}
+
+.introducao {
+    font-family: 'Parisienne', cursive;
+    font-size: 58px;
+    float: left;
+    width: 100%;
+    padding-top: 100px;
+}
+
+.texto-nome {
+    line-height: 1;
+    text-align: left;
+    padding-left: 45px;
+      margin-top: -30px; 
+}
+
+.nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: #faf3e7;
+    float: left;
+    width: 100%;
+    text-align: justify;
+}
+
+.texto-introducao h1,
+.texto-nome h2 {
+  margin: 0;
+}
+
+.fundo {
+    flex: 1;
+}
+
+.foto {
+    flex-shrink: 0;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.foto-joanna {
+    width: 500px; 
+    height: auto;
+    padding-right: 60px;
+}
+
+.sobre-mim {
+    padding: 100px 20px;
+    background-color: #faf3e7;
+    color: #720e38;
+    text-align: center;
+    display: flex;
+
+}
+
+.sobre-title {
+    padding-left: 100px;
+   font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    display: flex;
+    white-space: nowrap;
+}
+
+.sobre-text {
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: justify;
+    padding-right: 80px;
+    padding: 100px 100px 0 90px;
+}
+
+.projetos {
+    padding: 50px 20px;
+    background-color: #faf3e7;
+    color: #720e38;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projetos-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.projetos-title2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 90px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    margin-top: -30px;
+    padding-left: 160px;
+}
+
+.projetos-text {
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+/* ===== Carrossel de Projetos ===== */
+
+.titulo-projeto {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color:#faf3e7; 
+    font-family: 'Playfair Display', serif;
+}
+
+.descricao-projeto {
+    font-size: 16px;
+    color:#faf3e7; 
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel__track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel__track {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.45s ease;
+}
+
+.card-projeto {
+    background: #720e38;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 16px;
+    box-sizing: border-box;
+    flex: 0 0 calc(33.333% - 14px);
+    text-align: left;
+}
+
+.card-projeto .imagem-projeto {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.carousel__nav {
+    background: transparent;
+    border: none;
+    font-size: 36px;
+    color: #a72c5f;
+    cursor: pointer;
+    padding: 8px 12px;
+    user-select: none;
+}
+
+.carousel__indicators {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.carousel__indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d9b0c2;
+    cursor: pointer;
+}
+
+.carousel__indicator.active { background: #720e38; }
+
+@media (max-width: 900px) {
+    .card-projeto { flex: 0 0 220px; }
+}
+
+@media (max-width: 700px) {
+    .carousel {
+        gap: 6px;
+    }
+
+    .card-projeto {
+        flex: 0 0 82%;
+    }
+
+    .carousel__nav {
+        font-size: 28px;
+        padding: 6px 8px;
+    }
+}
+
+.link-projeto {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 15px;
+    background-color: #720e38;
+    color: #faf3e7;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.link-projeto:hover {
+    background-color: #b3386b;
+}
+
+/* ===== FIM  do Carrossel de Projetos ===== */
+
+.curriculo {
+    padding: 100px 20px;
+    color: #faf3e7;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #520a28;
+    padding-left: 50px;
+    margin: 15px 0; 
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 4px;
+    padding-top: 60px;
+    margin-top: 100px;
+}
+
+@media (max-width: 900px) {
+    .curriculo {
+        margin: 40px 20px 0;
+        padding: 60px 20px;
+    }
+}
+
+
+.curriculo-title {
+    font-family: 'Parisienne', cursive;
+    font-size: 108px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.curriculo-text {
+    font-size: 21px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.link-curriculo {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 15px;
+    background-color: #881444;
+    color: #faf3e7;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 22px;
+    transition: background-color 0.3s;
+}
+
+.link-curriculo:hover {
+    background-color: #b3386b;
+}
+
+.conquistas {
+    padding: 50px 20px;
+    color: #720e38;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+}
+
+.conquistas-title {
+    font-family: 'Playfair Display', serif; 
+    font-size: 90px;
+    margin: 0;
+    white-space: normal;
+    padding-left: 0;
+    text-align: center;
+    display: inline-block;
+    margin-right: 80px; 
+}
+
+.conquistas-title1 {
+    font-family: 'Parisienne', cursive; 
+    font-size: 90px;
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: 8px;
+    white-space: normal;
+    text-align: center;
+    display: inline-block;
+    margin-left: 80px; 
+}
+
+.conquistas-text {
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 24px;
+    max-width: 800px;
+}
+
+
+.container-card-conquistas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    align-items: stretch;
+}
+
+.conquistas-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.card-conquista {
+    background: #720e38;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+@media (max-width: 900px) {
+    .container-card-conquistas {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .container-card-conquistas {
+        grid-template-columns: 1fr;
+    }
+
+    .card-conquista {
+        width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    .apresentacao {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        padding: 50px 20px;
+    }
+
+    .fundo {
+        width: 100%;
+    }
+
+    .texto-introducao,
+    .texto-nome {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .introducao,
+    .nome {
+        float: none;
+        width: auto;
+        text-align: center;
+    }
+
+    .introducao {
+        padding-top: 0;
+        font-size: clamp(2.8rem, 8vw, 4.4rem);
+    }
+
+    .nome {
+        font-size: clamp(3.5rem, 10vw, 6rem);
+        margin-top: 10px;
+    }
+
+    .foto {
+        margin: 0;
+    }
+
+    .foto-joanna {
+        width: min(100%, 420px);
+        padding-right: 0;
+    }
+
+    .sobre-mim {
+        flex-direction: column;
+        align-items: center;
+        padding: 70px 20px;
+        gap: 20px;
+    }
+
+    .sobre-title {
+        padding-left: 0;
+        font-size: clamp(2.8rem, 7vw, 4.2rem);
+        text-align: center;
+        white-space: normal;
+    }
+
+    .sobre-text {
+        padding: 0;
+        font-size: clamp(1.05rem, 2.1vw, 1.5rem);
+        text-align: left;
+    }
+}
+
+@media (max-width: 780px) {
+    .projetos-title,
+    .projetos-title2,
+    .conquistas-title,
+    .conquistas-title1 {
+        font-size: clamp(3rem, 11vw, 5.5rem);
+        white-space: normal;
+    }
+
+    .projetos-title2 {
+        padding-left: 0;
+        margin-top: 0;
+    }
+
+    .conquistas-title,
+    .conquistas-title1 {
+        display: block;
+        margin: 0;
+    }
+
+    .curriculo-title {
+        font-size: clamp(4rem, 17vw, 7rem);
+        white-space: normal;
+    }
+
+    .curriculo-text,
+    .conquistas-text,
+    .projetos-text {
+        font-size: clamp(1.05rem, 2.7vw, 1.4rem);
+    }
+}
+
+@media (max-width: 520px) {
+    .apresentacao {
+        padding-top: 40px;
+    }
+
+    .menu {
+        gap: 8px 14px;
+    }
+
+    .projetos,
+    .conquistas {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .card-projeto {
+        flex-basis: 88%;
+    }
+
+    .titulo-projeto {
+        font-size: 1.7rem;
+    }
+
+    .descricao-projeto {
+        font-size: 0.95rem;
+    }
+
+    .link-projeto,
+    .link-curriculo {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.card-conquista .imagem-conquista {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.card-conquista .titulo-conquista {
+    font-size: 26px;
+    margin-bottom: 8px;
+    color:#faf3e7; 
+    font-family: 'Playfair Display', serif;
+}
+
+.card-conquista .descricao-conquista {
+    font-size: 18px;
+    color:#faf3e7; 
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+
+@media (max-width: 900px) {
+    .conquistas-title,
+    .conquistas-title1 {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+.rodape-contato {
+    padding: 50px 20px;
+    color: #faf3e7;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #520a28;
+}
+
+.link-curriculo {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 15px;
+    background-color: #881444;
+    color: #faf3e7;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
